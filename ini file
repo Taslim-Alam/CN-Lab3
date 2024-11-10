@@ -1,0 +1,33 @@
+[Config Lab_3_1]
+network =lab3
+record-eventlog = true
+.router_ProtocolPros[].limit=5
+.router_ProtocolPros[].source = 2
+.router_ProtocolPros[].destination = 4
+.router_ProtocolPros[].sendMsgOnInit = true
+
+[Config Lab_3_2]
+network =lab3
+record-eventlog = true
+.router_ProtocolPros[].limit=3
+.router_ProtocolPros[].source = 2
+.router_ProtocolPros[].destination = 5
+.router_ProtocolPros[].sendMsgOnInit = true
+
+
+[Config Lab_3_3]
+network =lab3
+record-eventlog = true
+.router_ProtocolPros[].limit=10
+.router_ProtocolPros[].source = 5
+.router_ProtocolPros[].destination = 0
+.router_ProtocolPros[].sendMsgOnInit = true
+
+
+[Config Lab_3_4]
+network =lab3
+record-eventlog = true
+.router_ProtocolPros[].limit=2
+.router_ProtocolPros[].source = 3
+.router_ProtocolPros[].destination = 4
+.router_ProtocolPros[].sendMsgOnInit = true
