@@ -1,0 +1,34 @@
+simple node_lab3
+{
+    parameters:
+        int limit = default(2);
+        bool sendMsgOnInit = default(false);
+        int source = default(0);
+        int destination = default(5);
+    gates:
+        inout gate[];
+}
+
+network lab3
+{
+    types:
+        channel Channel extends ned.DelayChannel
+        {
+            delay = 100ms;
+        }
+    submodules:
+        router_ProtocolPros[10]: node_lab3 {
+            @display("i=abstract/router");
+        }
+    connections:
+        router_ProtocolPros[0].gate++ <--> Channel <--> router_ProtocolPros[1].gate++;
+        router_ProtocolPros[1].gate++ <--> Channel <--> router_ProtocolPros[2].gate++;
+        router_ProtocolPros[1].gate++ <--> Channel <--> router_ProtocolPros[4].gate++;
+        router_ProtocolPros[2].gate++ <--> Channel <--> router_ProtocolPros[3].gate++;
+        router_ProtocolPros[3].gate++ <--> Channel <--> router_ProtocolPros[4].gate++;
+        router_ProtocolPros[4].gate++ <--> Channel <--> router_ProtocolPros[5].gate++;
+        router_ProtocolPros[5].gate++ <--> Channel <--> router_ProtocolPros[6].gate++;
+        router_ProtocolPros[6].gate++ <--> Channel <--> router_ProtocolPros[7].gate++;
+        router_ProtocolPros[7].gate++ <--> Channel <--> router_ProtocolPros[8].gate++;
+        router_ProtocolPros[8].gate++ <--> Channel <--> router_ProtocolPros[9].gate++;
+}
